@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버섯 분류 모델 프로젝트</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>버섯 분류 모델 (RandomForest 기반)</h1>
+    <a href="index.html">← 포트폴리오 홈으로</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. 프로젝트 개요</h2>
+      <ul>
+        <li><strong>프로젝트명:</strong> 버섯 분류 모델 구현 및 분석</li>
+        <li><strong>개발 기간:</strong> 2025.04</li>
+        <li><strong>참여 인원:</strong> 1명</li>
+        <li><strong>나의 역할:</strong> 데이터 전처리, 모델 개발, 성능 분석, 리포트 작성</li>
+      </ul>
+
+      <h2>2. 데이터셋 및 전처리</h2>
+      <ul>
+        <li><strong>출처:</strong> Kaggle Mushroom Dataset</li>
+        <li><strong>크기:</strong> 8124개 샘플 × 22개 변수</li>
+        <li><strong>Target:</strong> Mushroom_quality (e: 식용, p: 독성)</li>
+        <li><strong>전처리:</strong> '?' 결측값 제거, One-Hot Encoding 적용</li>
+      </ul>
+
+      <h2>3. 모델 구축 및 학습</h2>
+      <ul>
+        <li><strong>사용 모델:</strong> RandomForestClassifier (기본 및 튜닝 버전)</li>
+        <li><strong>분할 방식:</strong> train_test_split (80:20)</li>
+        <li><strong>튜닝:</strong> GridSearchCV로 n_estimators, max_depth, min_samples_split 최적화</li>
+      </ul>
+
+      <h2>4. 성능 평가</h2>
+      <ul>
+        <li>Accuracy: 100%</li>
+        <li>Precision / Recall / F1-score: 모두 1.0</li>
+        <li>ROC-AUC: 1.0</li>
+        <li>Confusion Matrix, ROC Curve 시각화</li>
+      </ul>
+      <img src="images/Mushroom2.png" alt="버섯 모델 결과 예시">
+      <img src="images/Mushroom3.png" alt="버섯 모델 결과 예시">
+
+      <h2>5. 하이퍼파라미터 튜닝</h2>
+      <p>GridSearchCV를 사용해 다음과 같은 조합을 탐색하였고, 최적의 성능을 유지하며 검증할 수 있었습니다.</p>
+      <ul>
+        <li>n_estimators: [100, 200]</li>
+        <li>max_depth: [5, 10, None]</li>
+        <li>min_samples_split: [2, 5, 10]</li>
+      </ul>
+
+      <h2>6. 프로젝트 고찰</h2>
+      <ul>
+        <li><strong>장점:</strong> 높은 정확도, 빠른 학습, 전처리 부담 적음</li>
+        <li><strong>한계:</strong> 실생활 데이터처럼 잡음이 많은 환경에는 추가 검증 필요</li>
+        <li><strong>활용:</strong> 생물학적 샘플 자동 판별 시스템 등</li>
+      </ul>
+
+      <h2>📄 핵심 코드 </h2>
+      <h3>데이터 분할 및 하이퍼파라미터 튜닝</h3>
+      <img src="images/Mushroom4.png" alt="버섯 모델 결과 예시">
+      <img src="images/Mushroom5.png" alt="버섯 모델 결과 예시">
+      <img src="images/Mushroom6.png" alt="버섯 모델 결과 예시">
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CSJ. All rights reserved.</p>
+  </footer>
+</body>
+</html>

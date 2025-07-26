@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고객 이탈 예측을 위한 앙상블 모델 비교</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>고객 이탈 예측을 위한 앙상블 모델 비교</h1>
+    <a href="index.html">← 포트폴리오 홈으로</a>
+  </header>
+
+  <main>
+  <section>
+    <h2>1. 프로젝트 개요</h2>
+    <ul>
+      <li><strong>프로젝트명:</strong> 고객 이탈 예측을 위한 앙상블 모델 비교</li>
+      <li><strong>개발 기간:</strong> 2023.10 – 2023.12</li>
+      <li><strong>참여 인원:</strong> 1명</li>
+      <li><strong>나의 역할:</strong> 데이터 전처리, 모델 개발 및 성능 평가, 시각화, 비교 분석 및 보고서 작성</li>
+    </ul>
+
+    <h2>2. 기술 스택</h2>
+    <ul>
+      <li><strong>사용 언어:</strong> Python</li>
+      <li><strong>프레임워크/라이브러리:</strong> scikit-learn, pandas, matplotlib, seaborn</li>
+      <li><strong>데이터베이스:</strong> 없음 (CSV 파일 기반)</li>
+      <li><strong>개발 도구:</strong> Google Colab, Jupyter Notebook</li>
+    </ul>
+
+    <h2>3. 주요 기능</h2>
+    <ul>
+      <li><strong>핵심 기능 소개:</strong> 고객 이탈 여부를 예측하기 위한 세 가지 앙상블 모델(Bagging, RandomForest, AdaBoost) 적용</li>
+      <li><strong>기술적 차별점:</strong> 동일 조건 하에서 모델 구조별 성능 정량 비교, 변수 중요도 시각화</li>
+      <li><strong>성능 최적화 내용:</strong> 5-Fold 교차검증 적용, 수치형 변수 표준화, 불균형 레이블 처리 고려</li>
+    </ul>
+
+    <h2>4. 문제 해결 사례</h2>
+    <ul>
+      <li><strong>직면한 문제:</strong> 모델별 성능이 예측 지표마다 다르게 나타나 최적 모델 선정 기준 설정이 어려움</li>
+      <li><strong>해결 과정:</strong> AUC(Area Under Curve)를 주요 기준으로 선정, 부가적으로 정확도와 실행 시간 비교</li>
+      <li><strong>결과 및 학습점:</strong> 단일 지표에 의존하지 않고 다양한 평가 지표를 조합해 실용적인 모델 선택 기준 설정의 중요성을 배움</li>
+    </ul>
+
+    <h2>📊 모델링 및 결과 분석</h2>
+    <ul>
+      <li><strong>사용 데이터:</strong> customer_churn.csv</li>
+      <li><strong>컬럼 구성:</strong> 나이, 월 사용량, 계약 기간, 고객센터 연락 횟수, 연체 여부, 이탈 여부 등</li>
+      <li><strong>모델:</strong> BaggingClassifier, RandomForestClassifier, AdaBoostClassifier</li>
+      <li><strong>평가지표:</strong> 정확도(Accuracy), AUC, 학습 시간</li>
+      <li><strong>결과:</strong> AdaBoost가 AUC 기준 가장 우수한 성능을 보여 최종 추천 모델로 선정됨</li>
+    </ul>
+
+    <img src="images/Ensemble1.png" alt="앙상블 모델 성능 비교 결과">
+<!--
+    <h2>💻 코드 일부 캡처</h2>
+    <img src="images/ensemble_code_snippet.jpg" alt="앙상블 모델 코드 캡처">
+-->
+    <h2>🔍 프로젝트를 통해 얻은 점</h2>
+    <ul>
+      <li>앙상블 모델의 구조적 차이와 장단점을 직접 비교하며 실험적으로 이해할 수 있었습니다.</li>
+      <li>성능 지표(AUC, 정확도 등) 외에도 실무에서 중요한 학습 시간, 예측 속도 등의 요소를 고려하는 법을 익혔습니다.</li>
+      <li>EDA 및 전처리의 중요성을 체감하며 데이터 품질이 모델 성능에 미치는 영향을 체험했습니다.</li>
+      <li>보고서 작성 및 시각화를 통해 결과를 직관적으로 전달하는 커뮤니케이션 능력도 함께 향상되었습니다.</li>
+    </ul>
+  
+  </section>
+</main>
+
+<footer>
+    <p>© 2025 CSJ. All rights reserved.</p>
+  </footer>
+</body>
+</html>

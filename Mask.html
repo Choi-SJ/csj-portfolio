@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSJ's Mask Detection Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>마스크 디텍션 (YOLOv5)</h1>
+    <a href="index.html">← 포트폴리오 홈으로</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. 프로젝트 개요</h2>
+      <ul>
+        <li><strong>프로젝트명:</strong> 마스크 착용 상태 인식 시스템 (YOLOv5 기반)</li>
+        <li><strong>개발 기간:</strong> 2023.10 – 2023.12</li>
+        <li><strong>참여 인원:</strong> 1명</li>
+        <li><strong>나의 역할:</strong> 전체 기획, 데이터 전처리, 모델 학습 및 평가, 커스텀 데이터셋 구축, 결과 시각화 및 보고서 작성</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. 개발 환경 및 기술 스택</h2>
+      <ul>
+        <li><strong>사용 언어:</strong> Python</li>
+        <li><strong>프레임워크:</strong> PyTorch, YOLOv5</li>
+        <li><strong>개발 도구:</strong> Google Colab, Jupyter Notebook, OpenCV, Pandas, Matplotlib, Seaborn</li>
+      </ul>
+      <h3>📦 라이브러리 설치 코드</h3>
+      <pre><code>!pip install tensorflow
+!pip install opencv-python</code></pre>
+    </section>
+
+    <section>
+      <h2>3. 데이터 구성 및 전처리</h2>
+      <p>
+        라벨은 Pascal VOC 포맷(XML)으로 주어졌으며, YOLO 포맷(.txt)으로 자동 변환하였습니다. 
+        이미지 크기에 맞춰 bounding box를 재계산하고 클래스 ID를 유지한 채 데이터셋을 train/val/test로 분리하였습니다.
+      </p>
+      <p>아래는 라벨 변환 코드 예시입니다.</p>
+      <figure class="capture-block">
+        <img src="images/Mask3.png" alt="YOLO 라벨 변환 코드 캡처">
+        <img src="images/Mask4.png" alt="YOLO 라벨 변환 코드 캡처">
+        <img src="images/Mask5.png" alt="YOLO 라벨 변환 코드 캡처">
+        <figcaption></figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>4. 모델 학습 및 하이퍼파라미터</h2>
+      <ul>
+        <li><strong>모델 아키텍처:</strong> YOLOv5s (yolov5l은 과적합 경향)</li>
+        <li><strong>Epochs:</strong> 50</li>
+        <li><strong>Batch size:</strong> 16</li>
+        <li><strong>Learning rate:</strong> 0.01</li>
+      </ul>
+      <p>하이퍼파라미터 튜닝을 통해 모델의 안정성과 성능을 확보했습니다.</p>
+    </section>
+
+    <section>
+      <h2>5. 성능 평가 및 분석</h2>
+      <ul>
+        <li>정확도 (mAP@0.5): 86%</li>
+        <li>Precision: 0.88 / Recall: 0.85</li>
+        <li>부적절 착용 케이스는 데이터 부족으로 오탐 가능성이 존재</li>
+      </ul>
+      <p>전체적으로는 높은 탐지율을 보였으며, 클래스 간 성능 차이를 확인했습니다.</p>
+    </section>
+
+    <section>
+      <h2>6. 탐지 결과</h2>
+      <p>YOLOv5를 활용한 마스크 탐지 학습 및 정확도 탐지 그리고 결과입니다.</p>
+      <figure class="capture-block">
+        <img src="images/Mask1.png" alt="탐지 결과 이미지 예시">
+        <img src="images/Mask2.png" alt="탐지 결과 이미지 예시">
+        <figcaption></figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>7. 문제 해결 사례</h2>
+      <ul>
+        <li><strong>직면한 문제:</strong> XML 어노테이션 → YOLO 포맷 변환 시 좌표 오차 발생</li>
+        <li><strong>해결 과정:</strong> 이미지 시각화를 통해 직접 수식 검증 및 보정</li>
+        <li><strong>학습점:</strong> 객체 탐지 라벨 구조에 대한 실전 감각 습득</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CSJ. All rights reserved.</p>
+  </footer>
+</body>
+</html>

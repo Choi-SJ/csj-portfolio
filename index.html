@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSJ's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+/* 포트폴리오 전체 페이지 공통 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+header {
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+header p {
+  margin-top: 0.5rem;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #1e293b;
+}
+
+.profile {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.photo-wrap {
+  flex: 0 0 auto;
+}
+
+.profile-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.profile p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.profile a {
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.profile a:hover {
+  text-decoration: underline;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #b9c1b0;
+  color:#ffffff;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  margin: 0.2rem 0.3rem 0.2rem 0;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.project-table th, .project-table td {
+  padding: 1rem;
+  font-size: 0.95rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.project-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.project-table td.project-title {
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+.project-table tr:last-child td {
+  border-bottom: none;
+}
+
+.project-table a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.project-table a.button {
+  display: inline-block;
+  padding: 0.45rem 1.2rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.project-table a.button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 3rem;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>CSJ's Portfolio</h1>
+    <p>꾸준히 성장하는 개발자가 되고자 합니다</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <h2>👤 프로필</h2>
+      <div class="profile-layout">
+        <div class="photo-wrap">
+          <img src="images/profile.png" alt="프로필 사진" class="profile-photo">
+        </div>
+
+        <div class="info-grid">
+          <div>
+            <p><strong>이름:</strong> 최세진 </p>
+            <p><strong>이메일:</strong> choisj6369@gmail.com</p>
+            <p><strong>생년월일:</strong> 2001.01.06</p>
+            <p><strong>군필여부:</strong> 군필 (육군 하사 전역)</p>
+          </div>
+          <div>
+            <p><strong>학력:</strong><br>건국대학교(글로컬) 컴퓨터공학과 소프트웨어전공<br>부전공 : Micro-degree1 인공지능 전문가 양성과정</p>
+            <p><strong>관심 분야:</strong><br>백엔드, 데이터 분석, AI 모델 서빙</p>
+            <p><strong>기술 스택:</strong><br>
+              <span class="badge" data-skill="Python">Python</span>
+              <span class="badge" data-skill="Django">Django</span>
+              <span class="badge" data-skill="React">React</span>
+              <span class="badge" data-skill="SQLite">SQLite</span>
+              <span class="badge" data-skill="REST API">REST API</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2>📂 프로젝트 목록</h2>
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>프로젝트명</th>
+          <th>소개</th>
+          <th>기술 스택</th>
+          <th>링크</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="project-title">마스크 디텍션 (YOLOv5)</td>
+          <td>YOLOv5를 활용한 마스크 착용 여부 인식 모델 구현</td>
+          <td>
+            <span class="badge">Python</span>
+            <span class="badge">YOLOv5</span>
+            <span class="badge">OpenCV</span>
+            <span class="badge">Google Colab</span>
+          </td>
+          <td><a href="mask.html" class="button">자세히</a></td>
+        </tr>
+        <tr>
+          <td class="project-title">고객이탈 예측 (앙상블 모델)</td>
+          <td>Bagging / RandomForest / AdaBoost 모델 비교 분석</td>
+          <td>
+            <span class="badge">Python</span>
+            <span class="badge">scikit-learn</span>
+            <span class="badge">Pandas</span>
+            <span class="badge">Matplotlib</span>
+          </td>
+          <td><a href="ensemble.html" class="button">자세히</a></td>
+        </tr>
+        <tr>
+          <td class="project-title">버섯 분류 모델 프로젝트</td>
+          <td>버섯의 생물학적 특성을 기반으로 식용 여부를 분류하는 이진 분류 모델</td>
+          <td>
+            <span class="badge">Python</span>
+            <span class="badge">RandomForest</span>
+            <span class="badge">Pandas</span>
+            <span class="badge">scikit-learn</span>
+          </td>
+          <td><a href="Mushroom.html" class="button">자세히</a></td>
+        </tr>
+        <tr>
+          <td class="project-title">에너지 효율 예측 회귀 모델</td>
+          <td>건물 구조 데이터를 활용해 냉방 부하(Cooling Load)를 예측하는 회귀 모델</td>
+          <td>
+            <span class="badge">Python</span>
+            <span class="badge">RandomForestRegressor</span>
+            <span class="badge">scikit-learn</span>
+            <span class="badge">Matplotlib</span>
+          </td>
+          <td><a href="Energy.html" class="button">자세히</a></td>
+        </tr>
+        <tr>
+          <td class="project-title">Triply - <br>사용자 맞춤형 여행지 추천 앱(진행중)</td>
+          <td>개인화 설문 기반 여행지 추천 앱 설계 및 구현</td>
+          <td>
+            <span class="badge">Django</span>
+            <span class="badge">React Native</span>
+            <span class="badge">SQLite</span>
+            <span class="badge">REST API</span>
+          </td>
+          <td><a href="triply.html" class="button">자세히</a></td>
+        </tr>
+        <tr>
+          <td class="project-title">주식 뉴스 크롤링 앱(진행중)</td>
+          <td>뉴스 크롤링 기반 종목 매핑 및 요약 시각화 앱</td>
+          <td>
+            <span class="badge">Python</span>
+            <span class="badge">BeautifulSoup</span>
+            <span class="badge">Pandas</span>
+            <span class="badge">React</span>
+          </td>
+          <td><a href="stock.html" class="button">자세히</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <p>내일의 나는 어제의 나보다 발전할겁니다</p>
+  </footer>
+</body>
+</html>

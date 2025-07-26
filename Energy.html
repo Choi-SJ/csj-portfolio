@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에너지 효율 예측 회귀 모델</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>건물 에너지 효율 회귀 예측</h1>
+    <a href="index.html">← 포트폴리오 홈으로</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. 프로젝트 개요</h2>
+      <ul>
+        <li><strong>프로젝트명:</strong> 건물 Cooling Load 예측 모델 구현</li>
+        <li><strong>개발 기간:</strong> 2025.04</li>
+        <li><strong>참여 인원:</strong> 1명</li>
+        <li><strong>나의 역할:</strong> 데이터 분석, 모델 구축, 성능 비교 및 리포트 작성</li>
+      </ul>
+
+      <h2>2. 데이터셋 및 전처리</h2>
+      <ul>
+        <li><strong>출처:</strong> Energy Efficiency Dataset (Kaggle)</li>
+        <li><strong>구성:</strong> 768개 샘플, 8개 특성</li>
+        <li><strong>타겟 변수:</strong> Cooling Load (Y2)</li>
+        <li><strong>전처리:</strong> 결측치 없음, 수치형 입력, StandardScaler로 정규화</li>
+      </ul>
+
+      <h2>3. 모델 구축 및 학습</h2>
+      <ul>
+        <li><strong>사용 모델:</strong> Linear Regression, RandomForestRegressor</li>
+        <li><strong>데이터 분할:</strong> 8:2 (train/test)</li>
+        <li><strong>스케일링:</strong> StandardScaler</li>
+      </ul>
+
+      <h2>4. 성능 평가</h2>
+      <ul>
+        <li><strong>평가지표:</strong> RMSE, MAE, R² Score</li>
+        <li><strong>결과 시각화:</strong> 예측 vs 실제 산점도, ROC Curve</li>
+        <li>RandomForest 모델은 R² ≈ 0.99로 우수한 성능</li>
+      </ul>
+      <img src="images/Energy1.png" alt="에너지 예측 성능 결과 이미지">
+
+      <h2>5. 하이퍼파라미터 튜닝</h2>
+      <p>GridSearchCV로 최적 조합을 탐색한 결과, 다음 설정에서 성능 향상을 확인했습니다:</p>
+      <ul>
+        <li>n_estimators: 200</li>
+        <li>max_depth: 10</li>
+        <li>min_samples_split: 2</li>
+      </ul>
+
+      <h2>6. 프로젝트 고찰</h2>
+      <ul>
+        <li><strong>장점:</strong> 데이터가 깨끗하고 예측 정확도가 높음</li>
+        <li><strong>한계:</strong> 데이터 다양성 부족으로 일반화 성능 검증은 제한적</li>
+        <li><strong>활용:</strong> 건축 설계 단계에서 냉방 수요 예측 도구로 활용 가능</li>
+      </ul>
+
+      <h2>📄 핵심 코드</h2>
+      <h3>데이터 분할, 모델 학습 및 하이퍼파라미터 튜닝</h3>
+      <img src="images/Energy2.png" alt="에너지 모델 결과 예시">
+      <img src="images/Energy3.png" alt="에너지 모델 결과 예시">
+      <img src="images/Energy4.png" alt="에너지 모델 결과 예시">
+      <img src="images/Energy5.png" alt="에너지 모델 결과 예시">
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CSJ. All rights reserved.</p>
+  </footer>
+</body>
+</html>
